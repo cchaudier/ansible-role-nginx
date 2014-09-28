@@ -1,5 +1,9 @@
 ---
 
+- name: Uninstall the apache packages
+  apt: name=apache2 state=absent purge=yes
+  when: ansible_os_family == "Debian"
+
 - name: Install the selinux python module
   yum: name=libselinux-python state=present
   when: ansible_os_family == "RedHat"
