@@ -23,7 +23,7 @@ nginx_sites:
   default:
      - listen 80
      - server_name _
-     - root "/usr/share/nginx/html"
+     - root "/var/www"
      - index index.html
 
 nginx_configs: {}
