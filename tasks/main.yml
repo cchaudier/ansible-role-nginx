@@ -4,6 +4,7 @@
   apt: name=apache2 state=absent purge=yes
   when: ansible_os_family == "Debian"
 
+#------------------- RedHat
 - name: Install the selinux python module
   yum: name=libselinux-python state=present
   when: ansible_os_family == "RedHat"
@@ -20,6 +21,7 @@
   when: ansible_os_family == "RedHat"
   tags: [packages,nginx]
 
+#------------------- dDebian
 - name: Install the nginx packages
   apt: name={{ item }} state=present update_cache=yes
   with_items: ubuntu_pkg
