@@ -90,3 +90,6 @@
 - name: Start the nginx service
   service: name=nginx state=started enabled=yes
   tags: [service,nginx]
+
+- name: Install ngxtop
+  pip: name=ngxtop state=latest
